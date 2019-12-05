@@ -59,6 +59,7 @@ namespace ServiceLayer
             strFileName = DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd")
                 + "/" + DateTime.Now.ToUniversalTime().ToString("yyyyMMdd//THHmmssfff")
                 + "." + strName[strName.Length - 1];
+            return strFileName;
         }
     }
 }
