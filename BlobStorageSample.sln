@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorageSample", "BlobSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{D3FD10FE-13AE-4985-92D9-3CFADF233B8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext1", "DataContext1\DataContext1.csproj", "{33428E72-06A3-4B53-AB0E-77C6FC34131B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D3FD10FE-13AE-4985-92D9-3CFADF233B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3FD10FE-13AE-4985-92D9-3CFADF233B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3FD10FE-13AE-4985-92D9-3CFADF233B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33428E72-06A3-4B53-AB0E-77C6FC34131B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33428E72-06A3-4B53-AB0E-77C6FC34131B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33428E72-06A3-4B53-AB0E-77C6FC34131B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33428E72-06A3-4B53-AB0E-77C6FC34131B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
