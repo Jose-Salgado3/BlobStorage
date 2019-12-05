@@ -61,5 +61,35 @@ namespace ServiceLayer
                 + "." + strName[strName.Length - 1];
             return strFileName;
         }
+
+        private async Task<String> UploadFileToBlobAsync(string strFileName, byte[] fileData, string fileMimeType)
+        {
+            try
+            {
+                CloudStorageAccount cloudStorageAccount = CloudStorageAccount.Parse(accessKey);
+                CloudBlobClient cloudBlobClient = cloudStorageAccount.CreateCloudBlobClient();
+                string strContainerName = "uploads";
+                CloudBlobContainer cloudBlobContainer = cloudBlobClient.GetContainerReference(strContainerName);
+                string fileName = this.GenerateFileName(strFileName);
+
+                if (await cloudBlobContainer.CreateIfNotExistsAsync())
+                {
+                    await cloudBlobContainer.SetPermissionsAsync(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob });
+                }
+
+                if (fileName != null && fileData != null)
+                {
+                    CloudBlockBlob cloudBlockBlob = cloudBlobContainer.GetBlockBlobReference(fileName);
+                    cloudBlockBlob.Properties.ContentType = fileMimeType;
+                    await cloudBlockBlob.UploadFromByteArrayAsync(fileData, 0, fileData.Length);
+                    return cloudBlockBlob.Uri.AbsoluteUri
+                }
+                return "";
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }
